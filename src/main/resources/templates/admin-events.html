@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+<title>Manage Events</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+
+<body class="bg-light">
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
+<div class="container-fluid">
+
+<a class="navbar-brand" href="/admin/dashboard">Admin Panel</a>
+
+<div>
+
+<a href="/admin/dashboard" class="btn btn-outline-light me-2">Dashboard</a>
+
+<a href="/admin/events" class="btn btn-outline-light me-2">Manage Events</a>
+
+<a href="/admin/analytics" class="btn btn-outline-light me-2">Analytics</a>
+
+<a href="/" class="btn btn-success">User Portal</a>
+
+</div>
+
+</div>
+
+</nav>
+
+<div class="container mt-4">
+
+<h2>Manage Events</h2>
+
+<table class="table table-bordered">
+
+<thead class="table-dark">
+
+<tr>
+
+<th>ID</th>
+<th>Title</th>
+<th>Venue</th>
+<th>Date</th>
+<th>Capacity</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr th:each="ev : ${events}">
+
+<td th:text="${ev.id}"></td>
+<td th:text="${ev.title}"></td>
+<td th:text="${ev.venue}"></td>
+<td th:text="${ev.eventDate}"></td>
+<td th:text="${ev.capacity}"></td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</body>
+</html>
